@@ -14,21 +14,32 @@
     {% csrf_token %}
     {% block content %}
 
-    {% if user.is_authenticated %}
-        <br>
-        <p> Seja bem vindo {{ user.username }}! </p>
-        <br>
-        <p><a href="{% url 'home:logout' %}">Sair</a></p>
-    {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'home:login' %}">login</a>
-    {% endif %}
-
+    {% if user.is_authenticated %}   
+      </div>    
+      <div class="container">
+        <div class="top-bar-container">
+          <div class="top-bar-fixed">
+            <div class="top-bar-content">
+                <p1> Seja bem vindo {{ user.username }}! </p>
+                <br>                
+                <a href="{% url 'home:politica' %}">Inicio</a>   
+                <br>
+                <br>
+                <p1><a href="{% url 'home:logout' %}">Sair</a></p>
+            {% else %}
+                <p>You are not logged in</p>
+                <a href="{% url 'home:login' %}">login</a>
+            {% endif %}
+            </div>
+          </div>
+        </div>
     {% endblock %}
   
 </head>
 
 <body>
+   
+        
     <section class="chatbot">
         <div class="topo">
             <h3 class="nome">Sr. Bot</h3>

@@ -50,4 +50,6 @@ def cadastro(request):
             user = User.objects.create_user(username=username, email=email, password=senha)
             messages.info(request, 'Usuario cadastrado com sucesso')
             return redirect('/')  
-                
+
+def politica(request):
+    return redirect('http://127.0.0.1:8000/')

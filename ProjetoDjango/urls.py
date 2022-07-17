@@ -25,5 +25,4 @@ urlpatterns = [
     # QUANDO NÃO DIGITAR NADA VAI PARA A PAGINA HOMES
     path('', include("home.urls")),
     url('enviaMsg', views.enviaMsg, name='enviaMsg'),
-
 ]

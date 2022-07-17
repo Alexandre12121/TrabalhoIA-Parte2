@@ -1,4 +1,6 @@
 from django.urls import path
+from django.urls import re_path as url
+
 from . import views
 from django.contrib.auth import views as auth_views
 
@@ -12,4 +14,6 @@ urlpatterns = [
     path('cadastro', views.cadastro, name='cadastro'),
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    url('politica', views.politica, name='politica')
+
 ]
