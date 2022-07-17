@@ -49,18 +49,5 @@ def cadastro(request):
         else:            
             user = User.objects.create_user(username=username, email=email, password=senha)
             messages.info(request, 'Usuario cadastrado com sucesso')
-            return redirect('/')
-
-def login(request):
-    if request.method == "GET":
-        return render(request, 'login.html')
-    else:
-        username = request.POST.get('username')
-        senha = request.POST.get('senha')
-
-        user = authenticate(username=username, password=senha)
-
-        if user:
-            loginDjango(request, user)
-            return render(request, 'politica.html')          
+            return redirect('/')  
                 
